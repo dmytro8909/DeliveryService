@@ -1,0 +1,11 @@
+/home/dmytro/workspace/DeliveryService/src/main/java/controller/Controller.java
+/home/dmytro/workspace/DeliveryService/src/main/java/commands/ToLoginFormCommand.java
+/home/dmytro/workspace/DeliveryService/src/main/java/commands/factory/ActionFactory.java
+/home/dmytro/workspace/DeliveryService/src/main/java/logic/LoginLogic.java
+/home/dmytro/workspace/DeliveryService/src/main/java/commands/EmptyCommand.java
+/home/dmytro/workspace/DeliveryService/src/main/java/commands/client/CommandEnum.java
+/home/dmytro/workspace/DeliveryService/src/main/java/commands/LoginCommand.java
+/home/dmytro/workspace/DeliveryService/src/main/java/commands/LogoutCommand.java
+/home/dmytro/workspace/DeliveryService/src/main/java/resource/ConfigurationManager.java
+/home/dmytro/workspace/DeliveryService/src/main/java/resource/MessageManager.java
+/home/dmytro/workspace/DeliveryService/src/main/java/commands/ActionCommand.java
