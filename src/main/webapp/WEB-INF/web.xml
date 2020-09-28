@@ -21,11 +21,19 @@
 	</jsp-config>
 	<error-page>
 		<error-code>404</error-code>
-		<location>/WEB-INF/views/error/error.jsp</location>
+		<location>/views/error/error.jsp</location>
 	</error-page>
 	<error-page>
 		<exception-type>java.lang.RuntimeException</exception-type>
-		<location>/WEB-INF/views/error/error.jsp</location>
+		<location>/views/error/error.jsp</location>
 	</error-page>
+	
+	<description>MySQL</description>
+	<resource-ref>
+		<description>MySQL DB Connection Pool</description>
+		<res-ref-name>jdbc/delivery_service</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
 	
 </web-app>

@@ -1,41 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Delivery Service</title>
+		<title>Login</title>
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" 
-			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
-			integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" 
-			crossorigin="anonymous">
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" 
+		crossorigin="anonymous">
 	</head>
-	<body>
+	<body class="text-center">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col">
-					<nav class="nav">
-  						<a class="nav-link active" href="index.html">Home</a>
-  						<a class="nav-link" href="#">Link</a>
-  						<a class="nav-link" href="#">About Us</a>
-					</nav>
-				</div>
 				<div class="col"></div>
 				<div class="col"></div>
 				<div class="col">
-					<form action="controller" method="POST">
-						<input type="hidden" name="command" value="toLoginForm" />
-						<input type="submit" class="btn btn-success" value="Login">					
-					</form>
+										
 				</div>
-				<div class="col">
-					<form action="controller" method="POST">
-						<input type="hidden" name="command" value="toRegisterForm" />
-						<input type="submit" class="btn btn-success" value="Register">					
-					</form>
-				</div>
+				<div class="col"></div>
+				<div class="col"></div>
 			</div>
 		</div>
-		
 		<!-- Optional JavaScript -->
     	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 

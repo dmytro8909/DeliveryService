@@ -4,6 +4,7 @@ import commands.ActionCommand;
 import commands.LoginCommand;
 import commands.LogoutCommand;
 import commands.ToLoginFormCommand;
+import commands.ToRegisterFormCommand;
 
 public enum CommandEnum {
 	LOGIN {
@@ -19,6 +20,11 @@ public enum CommandEnum {
 	TOLOGINFORM {
 			{
 				this.command = new ToLoginFormCommand();
+			}
+	},
+	TOREGISTERFORM {
+			{
+				this.command = new ToRegisterFormCommand();
 			}
 	};
 		ActionCommand command;
