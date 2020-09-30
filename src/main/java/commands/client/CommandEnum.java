@@ -3,6 +3,7 @@ package commands.client;
 import commands.ActionCommand;
 import commands.LoginCommand;
 import commands.LogoutCommand;
+import commands.RegisterCommand;
 import commands.ToLoginFormCommand;
 import commands.ToRegisterFormCommand;
 
@@ -20,6 +21,11 @@ public enum CommandEnum {
 	TOLOGINFORM {
 			{
 				this.command = new ToLoginFormCommand();
+			}
+	},
+	REGISTER {
+			{
+				this.command = new RegisterCommand();
 			}
 	},
 	TOREGISTERFORM {

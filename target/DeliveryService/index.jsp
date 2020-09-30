@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -14,7 +15,7 @@
 			<div class="row">
 				<div class="col">
 					<nav class="nav">
-  						<a class="nav-link active" href="index.html">Home</a>
+  						<a class="nav-link active" href="#">Home</a>
   						<a class="nav-link" href="#">Link</a>
   						<a class="nav-link" href="#">About Us</a>
 					</nav>

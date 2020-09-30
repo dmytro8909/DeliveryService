@@ -1,4 +1,5 @@
 /home/dmytro/workspace/DeliveryService/src/main/java/commands/factory/ActionFactory.java
+/home/dmytro/workspace/DeliveryService/src/main/java/commands/RegisterCommand.java
 /home/dmytro/workspace/DeliveryService/src/main/java/commands/client/CommandEnum.java
 /home/dmytro/workspace/DeliveryService/src/main/java/commands/LoginCommand.java
 /home/dmytro/workspace/DeliveryService/src/main/java/db/ConnectionPool.java

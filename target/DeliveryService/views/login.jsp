@@ -20,20 +20,17 @@
 					<form name="loginForm" method="POST" action="controller">
 						<input type="hidden" name="command" value="login" />
 						<div class="form-group">
-    						<label for="exampleInputEmail1">Login</label>
-						    <input type="text" name="login" class="form-control" 
-						    					id="exampleInputEmail1" 
-						    					aria-describedby="emailHelp">
+    						<input type="text" name="login" 
+    							   class="form-control" placeholder="Login">
 						</div>
 						<div class="form-group">
-						    <label for="exampleInputPassword1">Password</label>
 						    <input type="password" name="password" 
-						    	   class="form-control" 
-						           id="exampleInputPassword1">
+						           class="form-control" placeholder="Password">
 						</div>
 						<div class="checkbox mb-3">
 					    <label>
-					      	<input type="checkbox" value="remember-me"> Remember me
+					      	<input type="checkbox" 
+					      	       value="remember-me"> Remember me
 					    </label>
 						</div>
 						<br/>

@@ -10,6 +10,18 @@ public class DBManager {
 	
 	private static final Logger LOGGER = LogManager.getLogger(DBManager.class);
 
+	public String getUserLogin() {
+		String login = null;
+		
+		return login;
+	}
+	
+	public String getUserPassword() {
+		String password = null;
+		
+		return password;
+	}
+	
 	// //////////////////////////////////////////////////////////
 	// DB util methods
 	// //////////////////////////////////////////////////////////
