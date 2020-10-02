@@ -91,7 +91,6 @@ public class Controller extends HttpServlet {
 			RequestDispatcher dispatcher = 
 					getServletContext().getRequestDispatcher(page);
 			dispatcher.forward(request, response);
-//			response.sendRedirect(page);
 		} else {
 			page = ConfigurationManager.getProperty("path.page.index");
 			request.getSession().setAttribute("nullPage",
