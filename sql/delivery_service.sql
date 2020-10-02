@@ -117,3 +117,8 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
+INSERT INTO `users` (`name`, `last_name`, `login`, `password`, `role`) 
+VALUES 
+	   ('Manager', 'Manager', 'manager', 'manager', 'manager'),
+	   ('Client', 'Client', 'client', 'client', 'user'),
+	   ('Клиент', 'Клиент', 'клиент', 'клиент', 'user');
