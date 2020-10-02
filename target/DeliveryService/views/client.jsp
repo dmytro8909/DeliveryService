@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Welcome</title>
+		<title>Client</title>
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" 
 		href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
@@ -16,7 +16,7 @@
 			<div class="row">
 				<div class="col"></div>
 				<div class="col">
-					<h2>Welcome</h2>
+					<h2>Client</h2>
 					<h3>${user}, hello!</h3>
 					<a class="btn btn-primary" 
 				   	   href="controller?command=logout" 

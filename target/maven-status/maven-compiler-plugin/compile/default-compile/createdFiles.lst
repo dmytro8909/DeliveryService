@@ -1,3 +1,4 @@
+db/SQLConstants.class
 commands/client/CommandEnum$2.class
 commands/LoginCommand.class
 commands/factory/ActionFactory.class
@@ -10,6 +11,7 @@ commands/client/CommandEnum$4.class
 commands/client/CommandEnum$1.class
 db/UserDAO.class
 commands/client/CommandEnum.class
+exception/Messages.class
 commands/RegisterCommand.class
 entities/Entity.class
 commands/client/CommandEnum$3.class

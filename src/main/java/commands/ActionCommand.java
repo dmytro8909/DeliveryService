@@ -1,5 +1,5 @@
 package commands;
 import javax.servlet.http.HttpServletRequest;
 public interface ActionCommand {
-	String execute(HttpServletRequest request);
+	String execute(HttpServletRequest request) throws Exception;
 }

@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Login</title>
+		<title>Manager</title>
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" 
 		href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
@@ -15,33 +15,16 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col"></div>
-				<div class="col"></div>
 				<div class="col">
-					<form name="loginForm" method="POST" action="controller">
-						<input type="hidden" name="command" value="login" />
-						<div class="form-group">
-    						<input type="text" name="login" 
-    							   class="form-control" placeholder="Login">
-						</div>
-						<div class="form-group">
-						    <input type="password" name="password" 
-						           class="form-control" placeholder="Password">
-						</div>
-						<br/>
-							${errorLoginPassMessage}
-							${wrongAction}
-							${nullPage}
-						<br/>
-						    <button type="submit" 
-						            class="btn btn-lg btn-success btn-block">
-						            Log in</button>
-					</form>
+					<h2>Manager</h2>
+					<h3>${user}, hello!</h3>
+					<a class="btn btn-primary" 
+				   	   href="controller?command=logout" 
+				   	   role="button">Logout</a>
 				</div>
-				<div class="col"></div>
 				<div class="col"></div>
 			</div>
 		</div>
-	
 		<!-- Optional JavaScript -->
     	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 

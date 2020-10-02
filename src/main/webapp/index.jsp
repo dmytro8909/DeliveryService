@@ -22,17 +22,18 @@
 				</div>
 				<div class="col"></div>
 				<div class="col"></div>
+				<div class="col"></div>
 				<div class="col">
-					<form action="controller" method="POST">
-						<input type="hidden" name="command" value="toLoginForm" />
-						<input type="submit" class="btn btn-success" value="Login">					
-					</form>
-				</div>
-				<div class="col">
-					<form action="controller" method="POST">
-						<input type="hidden" name="command" value="toRegisterForm" />
-						<input type="submit" class="btn btn-success" value="Register">					
-					</form>
+					<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+						<form action="controller" method="POST">
+							<input type="hidden" name="command" value="toLoginForm" />
+							<input type="submit" class="btn btn-success" value="Login">					
+						</form>
+						<form action="controller" method="POST">
+							<input type="hidden" name="command" value="toRegisterForm" />
+							<input type="submit" class="btn btn-success" value="Register">					
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -23,7 +23,7 @@ public class RegisterCommand implements ActionCommand {
 		} else {
 			request.setAttribute("errorLoginPassMessage",
 			MessageManager.getProperty("message.loginerror"));
-			page = ConfigurationManager.getProperty("path.page.login");
+			page = ConfigurationManager.getProperty("path.page.register");
 		}
 		return page;
 	}

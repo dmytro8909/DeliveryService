@@ -27,12 +27,6 @@
 						    <input type="password" name="password" 
 						           class="form-control" placeholder="Password">
 						</div>
-						<div class="checkbox mb-3">
-					    <label>
-					      	<input type="checkbox" 
-					      	       value="remember-me"> Remember me
-					    </label>
-						</div>
 						<br/>
 							${errorLoginPassMessage}
 							${wrongAction}

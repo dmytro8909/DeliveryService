@@ -26,22 +26,27 @@ public class ConnectionPool {
 	}
 	
 	public Connection getConnection() {
-		Context initContext;
-		Context envContext;
+		Context initCtx;
+		Context envCtx;
 		Connection connection = null;
 		try {
-			initContext = new InitialContext();
-			envContext = (Context)initContext.lookup("java:comp/env");
-			
-			DataSource ds = 
-					(DataSource)envContext.lookup("jdbc/delivery_service");
-			connection = ds.getConnection();
+			initCtx = new InitialContext();
+			envCtx = (Context) initCtx.lookup("java:comp/env");
+			// delivery_service - the name of data source
+			DataSource dataSource = 
+					(DataSource)envCtx.lookup("jdbc/DeliveryService");
+			connection = dataSource.getConnection();
 		} catch (NamingException e) {
 			LOGGER.error("Naming exception");
 		} catch (SQLException e) {
 			LOGGER.error("SQLException");
-		}
+		} 
 		return connection;
+	}
+	
+	public static void main(String[] args) {
+		ConnectionPool pool = new ConnectionPool();
+		System.out.println(pool.getConnection());
 	}
 	
 }
