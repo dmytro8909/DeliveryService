@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col">
+			<nav class="nav">
+				<a class="nav-link" href="#">Home</a>
+  				<a class="nav-link" href="#">Link</a>
+  				<a class="nav-link" href="#">About Us</a>
+			</nav>
+		</div>
+		<div class="col"></div>
+		<div class="col"></div>
+		<div class="col"></div>
+		<div class="col">
+			<a class="btn btn-success" 
+			   href="controller?command=logout" 
+			   role="button">Logout</a>
+		</div>
+	</div>
+</div>

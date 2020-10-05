@@ -9,7 +9,6 @@ db/DBManager.class
 logic/LoginLogic.class
 commands/client/CommandEnum$4.class
 commands/client/CommandEnum$1.class
-db/UserDAO.class
 commands/client/CommandEnum.class
 exception/Messages.class
 commands/RegisterCommand.class
@@ -21,5 +20,6 @@ db/ConnectionPool.class
 commands/EmptyCommand.class
 commands/ToRegisterFormCommand.class
 entities/User.class
+dao/UserDAO.class
 commands/client/CommandEnum$5.class
 controller/Controller.class

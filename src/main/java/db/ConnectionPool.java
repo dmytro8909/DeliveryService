@@ -25,7 +25,7 @@ public class ConnectionPool {
 		return instance;
 	}
 	
-	public Connection getConnection() {
+	public static Connection getConnection() {
 		Context initCtx;
 		Context envCtx;
 		Connection connection = null;

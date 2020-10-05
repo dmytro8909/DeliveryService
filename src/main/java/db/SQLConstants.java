@@ -7,4 +7,6 @@ public class SQLConstants {
 			"SELECT `password` FROM `users` WHERE `role`='manager'";
 	public static final String SQL_FIND_USER_BY_LOGIN =
 			"SELECT * FROM `users` WHERE `login`=?";
+	public static final String GET_ALL_USERS =
+			"SELECT * FROM `users`";
 }

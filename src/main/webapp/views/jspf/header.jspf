@@ -1,0 +1,27 @@
+<%@ page language="java" %>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col">
+			<nav class="nav">
+				<a class="nav-link" href="/DeliveryService">Home</a>
+  				<a class="nav-link" href="#">Link</a>
+  				<a class="nav-link" href="#">About Us</a>
+			</nav>
+		</div>
+		<div class="col"></div>
+		<div class="col"></div>
+		<div class="col"></div>
+		<div class="col">
+			<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+				<form action="controller" method="POST">
+					<input type="hidden" name="command" value="toLoginForm" />
+					<input type="submit" class="btn btn-success" value="Login">					
+				</form>
+				<form action="controller" method="POST">
+					<input type="hidden" name="command" value="toRegisterForm" />
+					<input type="submit" class="btn btn-success" value="Register">					
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

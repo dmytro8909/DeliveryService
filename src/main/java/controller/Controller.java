@@ -38,7 +38,7 @@ public class Controller extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		getProcessRequest(request, response);
+		processRequest(request, response);
 	}
 
 	/**
@@ -46,10 +46,10 @@ public class Controller extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		postProcessRequest(request, response);
+		processRequest(request, response);
 	}
 
-	private void getProcessRequest(HttpServletRequest request,
+	private void processRequest(HttpServletRequest request,
 								HttpServletResponse response)
 										throws ServletException, IOException{
 		
@@ -74,30 +74,31 @@ public class Controller extends HttpServlet {
 		}
 	}
 
-	private void postProcessRequest(HttpServletRequest request,
-			HttpServletResponse response)
-					throws ServletException, IOException{
-		
-		String page = null;
-		ActionFactory client = new ActionFactory();
-		ActionCommand command = client.defineCommand(request);
-		try {
-			page = command.execute(request);
-		} catch (Exception e) {
-			LOGGER.error("Page exception");
-		}
-		
-		if (page != null) {
-			RequestDispatcher dispatcher = 
-					getServletContext().getRequestDispatcher(page);
-			dispatcher.forward(request, response);
-		} else {
-			page = ConfigurationManager.getProperty("path.page.index");
-			request.getSession().setAttribute("nullPage",
-					MessageManager.getProperty("message.nullpage"));
-			response.sendRedirect(request.getContextPath() + page);
-		}
-	}
+//	private void postProcessRequest(HttpServletRequest request,
+//			HttpServletResponse response)
+//					throws ServletException, IOException{
+//		
+//		String page = null;
+//		ActionFactory client = new ActionFactory();
+//		ActionCommand command = client.defineCommand(request);
+//		try {
+//			page = command.execute(request);
+//		} catch (Exception e) {
+//			LOGGER.error("Page exception");
+//		}
+//		
+//		if (page != null) {
+////			RequestDispatcher dispatcher = 
+////					getServletContext().getRequestDispatcher(page);
+////			dispatcher.forward(request, response);
+//			response.sendRedirect("controller");
+//		} else {
+//			page = ConfigurationManager.getProperty("path.page.index");
+//			request.getSession().setAttribute("nullPage",
+//					MessageManager.getProperty("message.nullpage"));
+//			response.sendRedirect(request.getContextPath() + page);
+//		}
+//	}
 	
 	
 	

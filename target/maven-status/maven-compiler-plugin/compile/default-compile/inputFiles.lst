@@ -13,8 +13,8 @@
 /home/dmytro/workspace/DeliveryService/src/main/java/commands/EmptyCommand.java
 /home/dmytro/workspace/DeliveryService/src/main/java/db/DBManager.java
 /home/dmytro/workspace/DeliveryService/src/main/java/commands/LogoutCommand.java
-/home/dmytro/workspace/DeliveryService/src/main/java/db/UserDAO.java
 /home/dmytro/workspace/DeliveryService/src/main/java/commands/ToRegisterFormCommand.java
 /home/dmytro/workspace/DeliveryService/src/main/java/entities/User.java
 /home/dmytro/workspace/DeliveryService/src/main/java/resource/MessageManager.java
+/home/dmytro/workspace/DeliveryService/src/main/java/dao/UserDAO.java
 /home/dmytro/workspace/DeliveryService/src/main/java/exception/Messages.java

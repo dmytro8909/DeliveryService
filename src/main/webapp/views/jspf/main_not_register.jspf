@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col"></div>
+		<div class="col">
+		<h2>Calculate shipping cost</h2>
+		<form name="calculateShippingCostForm" method="POST" action="controller">
+			<input type="hidden" name="command" value="calculateShippingCost" />
+			
+			
+			
+		</form>
+		</div>
+		<div class="col"></div>
+	</div>
+</div>
