@@ -25,7 +25,7 @@ public class ConnectionPool {
 		return instance;
 	}
 	
-	public static Connection getConnection() {
+	public Connection getConnection() {
 		Context initCtx;
 		Context envCtx;
 		Connection connection = null;
@@ -42,11 +42,6 @@ public class ConnectionPool {
 			LOGGER.error("SQLException");
 		} 
 		return connection;
-	}
-	
-	public static void main(String[] args) {
-		ConnectionPool pool = new ConnectionPool();
-		System.out.println(pool.getConnection());
 	}
 	
 }

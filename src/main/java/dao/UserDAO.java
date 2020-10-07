@@ -12,16 +12,18 @@ import org.apache.logging.log4j.Logger;
 
 import db.ConnectionPool;
 import db.SQLConstants;
+import entities.User;
 
-public class UserDAO implements AbstractDAO {
+public class UserDAO implements AbstractDAO<User> {
 	
 	private static final Logger LOGGER = LogManager.getLogger(UserDAO.class);
 
 	@Override
-	public <User> List<User> getAll() {
-		List users = new ArrayList();
+	public List<User> getAll() {
+		List<User> users = new ArrayList<>();
 		ResultSet rs = null;
-		try (Connection connection = ConnectionPool.getConnection();
+		ConnectionPool pool = ConnectionPool.getInstance();
+		try (Connection connection = pool.getConnection();
 			 Statement stmt = connection.createStatement()) {
 			
 			rs = stmt.executeQuery(SQLConstants.GET_ALL_USERS);
@@ -34,17 +36,17 @@ public class UserDAO implements AbstractDAO {
 	}
 
 	@Override
-	public <User> User get(int id) {
+	public User get(Long id) {
 		return null;
 	}
 
 	@Override
-	public <User> User update(User user) {
+	public User update(User user) {
 		return null;
 	}
 
 	@Override
-	public <User> User delete(User user) {
+	public User delete(User user) {
 		return null;
 	}
 	

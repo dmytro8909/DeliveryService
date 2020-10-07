@@ -1,0 +1,14 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col"></div>
+		<div class="col">
+		<h2>To Calculate</h2>
+		<form name="toCalculate" method="POST" action="controller">
+			<input type="hidden" name="command" value="notRegister" />
+			<button type="submit" class="btn btn-lg btn-success btn-block">
+				    To calculate</button>
+		</form>
+		</div>
+		<div class="col"></div>
+	</div>
+</div>

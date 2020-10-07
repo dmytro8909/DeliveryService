@@ -8,7 +8,6 @@
 			<div class="row">
 				<div class="col"></div>
 				<div class="col">
-					<h2>Client</h2>
 					<h3>${user}, hello!</h3>
 				</div>
 				<div class="col"></div>

@@ -1,8 +1,10 @@
 package commands.client;
 
 import commands.ActionCommand;
+import commands.CalculateShippingCostCommand;
 import commands.LoginCommand;
 import commands.LogoutCommand;
+import commands.NotRegisterCommand;
 import commands.RegisterCommand;
 import commands.ToLoginFormCommand;
 import commands.ToRegisterFormCommand;
@@ -28,9 +30,19 @@ public enum CommandEnum {
 				this.command = new RegisterCommand();
 			}
 	},
+	NOTREGISTER {
+		{
+			this.command = new NotRegisterCommand();
+		}
+	},
 	TOREGISTERFORM {
 			{
 				this.command = new ToRegisterFormCommand();
+			}
+	},
+	CALCULATESHIPPINGCOST {
+			{
+				this.command = new CalculateShippingCostCommand();
 			}
 	};
 		ActionCommand command;

@@ -14,6 +14,7 @@ import org.apache.logging.log4j.Logger;
 
 import commands.ActionCommand;
 import commands.factory.ActionFactory;
+import dao.DirectionDAO;
 import db.ConnectionPool;
 import resource.ConfigurationManager;
 import resource.MessageManager;
@@ -54,6 +55,13 @@ public class Controller extends HttpServlet {
 										throws ServletException, IOException{
 		
 		String page = null;
+		
+		
+		
+		DirectionDAO dirDAO = new DirectionDAO();
+		request.setAttribute("directionList",dirDAO.getAll());
+		
+		
 		ActionFactory client = new ActionFactory();
 		ActionCommand command = client.defineCommand(request);
 		try {

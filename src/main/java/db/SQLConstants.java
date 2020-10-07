@@ -9,4 +9,5 @@ public class SQLConstants {
 			"SELECT * FROM `users` WHERE `login`=?";
 	public static final String GET_ALL_USERS =
 			"SELECT * FROM `users`";
+	public static final String GET_ALL_DIRECTIONS = "SELECT * FROM `directions`";
 }
