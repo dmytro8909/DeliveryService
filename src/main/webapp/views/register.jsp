@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 	<%@ include file="/views/jspf/head.jspf" %>
@@ -13,19 +14,19 @@
 						<input type="hidden" name="command" value="register" />
 						<div class="form-group">
 							<input type="text" class="form-control" 
-										   	   placeholder="First name">
+								   name="name" placeholder="First name">
 						</div>			
 						<div class="form-group">
 							<input type="text" class="form-control" 
-										       placeholder="Last name">
+								   name="lastName" placeholder="Last name">
 						</div>		
 						<div class="form-group">	
 							<input type="text" class="form-control" 
-										   	   placeholder="Login">
+								   name="login"	placeholder="Login">
 						</div>		
 						<div class="form-group">	
 							<input type="password" class="form-control" 
-										   		   placeholder="Password">
+								   name="password" placeholder="Password">
 						</div>	
 						<br/>
 							${errorLoginPassMessage}
@@ -33,8 +34,8 @@
 							${nullPage}
 						<br/>
 						<button type="submit" 
-							            class="btn btn-lg btn-success btn-block">
-							            Registration</button>		
+							    class="btn btn-lg btn-success btn-block">
+							    Registration</button>		
 					</form>
 				</div>
 				<div class="col"></div>

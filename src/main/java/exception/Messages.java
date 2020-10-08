@@ -35,5 +35,7 @@ public class Messages {
 
 	public static final String ERR_CANNOT_CLOSE_STATEMENT = "Cannot close a statement";
 
+	public static final String ERR_CANNOT_CLOSE_PREPARED_STATEMENT = "Cannot close a prepared statement";
+
 	public static final String ERR_CANNOT_OBTAIN_DATA_SOURCE = "Cannot obtain the data source";
 }

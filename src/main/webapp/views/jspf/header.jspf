@@ -36,6 +36,7 @@
 			   		   role="button">Logout</a>
 				</c:when>
 				<c:otherwise>
+				<!-- 
 					<div class="btn-group btn-group-sm" role="group" 
 					     aria-label="Basic example">
 						<form action="controller" method="POST">
@@ -51,6 +52,13 @@
 							       value="Register">					
 						</form>
 					</div>
+				 -->
+				 <a class="btn btn-success" 
+				    href="controller?command=toLoginForm" 
+				    role="button">Login</a>
+				 <a class="btn btn-success" 
+				    href="controller?command=toRegisterForm" 
+				    role="button">Register</a>
 				</c:otherwise>
 			</c:choose>
 		</div>

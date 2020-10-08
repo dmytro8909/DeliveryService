@@ -3,7 +3,7 @@ package resource;
 import java.util.ResourceBundle;
 
 public class MessageManager {
-	private final static ResourceBundle resourceBundle = 
+	private static final ResourceBundle resourceBundle = 
 			ResourceBundle.getBundle("messages");
 		
 	private MessageManager() {}

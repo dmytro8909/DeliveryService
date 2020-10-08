@@ -106,6 +106,16 @@ public class DBManager {
 		}
 	}
 	
+	public void close(PreparedStatement pstmt) {
+		if (pstmt != null) {
+			try {
+				pstmt.close();
+			} catch (SQLException ex) {
+				LOGGER.error(Messages.ERR_CANNOT_CLOSE_PREPARED_STATEMENT, ex);
+			}
+		}
+	}
+	
 	/**
 	 * Closes a result set object.
 	 */

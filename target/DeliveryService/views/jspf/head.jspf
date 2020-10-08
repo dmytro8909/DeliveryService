@@ -1,5 +1,5 @@
-<%@ page language="java" %>
 <head>
+	<meta charset="utf-8"/>
 	<title>Delivery Service</title>
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" 

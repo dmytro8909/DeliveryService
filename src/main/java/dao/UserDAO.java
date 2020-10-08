@@ -78,6 +78,7 @@ public class UserDAO implements AbstractDAO<User> {
 			}
 			con.commit();
 		} catch (SQLException ex) {
+			LOGGER.error("SQLException");
 			dbManager.rollback(con);
 		} finally {
 			dbManager.close(con, pstmt, rs);
@@ -94,6 +95,32 @@ public class UserDAO implements AbstractDAO<User> {
 		user.setLastName(rs.getString("last_name"));
 		user.setRole(rs.getString("role"));
 		return user;
+	}
+	
+	public void insertUser(String name, 
+			               String lastName, 
+			               String login,
+			               String password) throws SQLException {
+		Connection connection = null;
+		PreparedStatement pstmt = null;
+		ConnectionPool pool = ConnectionPool.getInstance();
+		try {
+			connection = pool.getConnection();
+			pstmt = connection.prepareStatement(SQLConstants.INSERT_USER);
+			connection.setAutoCommit(false);
+			pstmt.setString(1, name);
+			pstmt.setString(2, lastName);
+			pstmt.setString(3, login);
+			pstmt.setString(4, password);
+			pstmt.executeUpdate();
+			connection.commit();
+		} catch (SQLException e) {
+			LOGGER.error("SQLException");
+			dbManager.rollback(connection);
+		} finally {
+			dbManager.close(connection);
+			dbManager.close(pstmt);
+		}
 	}
 	
 }
