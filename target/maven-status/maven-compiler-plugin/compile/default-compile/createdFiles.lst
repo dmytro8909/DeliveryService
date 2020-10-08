@@ -22,8 +22,10 @@ exception/Messages.class
 commands/RegisterCommand.class
 entities/Entity.class
 commands/client/CommandEnum$3.class
+commands/ToIndexCommand.class
 resource/ConfigurationManager.class
 commands/NotRegisterCommand.class
+commands/client/CommandEnum$8.class
 commands/CalculateShippingCostCommand.class
 commands/ToLoginFormCommand.class
 db/ConnectionPool.class

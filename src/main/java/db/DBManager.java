@@ -14,8 +14,7 @@ import exception.Messages;
 
 public class DBManager {
 	
-	private static ConnectionPool pool = ConnectionPool.getInstance();
-	private static SQLConstants sqlConstants = new SQLConstants();
+	private ConnectionPool pool = ConnectionPool.getInstance();
 	private static final Logger LOGGER = LogManager.getLogger(DBManager.class);
 
 	public String getManagerLogin() {
@@ -23,7 +22,7 @@ public class DBManager {
 		try (Connection con = pool.getConnection();
 			 Statement statement = con.createStatement();
 			 ResultSet resultSet = 
-					 statement.executeQuery(sqlConstants.FIND_MANAGER_LOGIN)) {
+					 statement.executeQuery(SQLConstants.FIND_MANAGER_LOGIN)) {
 				
 			if(resultSet.next()) {
     			login = resultSet.getString("login");
@@ -40,7 +39,7 @@ public class DBManager {
 		try (Statement statement = 
 				pool.getConnection().createStatement();
 			 ResultSet resultSet = 
-				statement.executeQuery(sqlConstants.FIND_MANAGER_PASSWORD)) {
+				statement.executeQuery(SQLConstants.FIND_MANAGER_PASSWORD)) {
 				
 			if(resultSet.next()) {
 				password = resultSet.getString("password");
@@ -52,27 +51,7 @@ public class DBManager {
 		return password;
 	}
 	
-	public User findUserByLogin(String login) {
-		User user = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		Connection con = null;
-		try {
-			con = pool.getConnection();
-			pstmt = con.prepareStatement(sqlConstants.SQL_FIND_USER_BY_LOGIN);
-			pstmt.setString(1, login);
-			rs = pstmt.executeQuery();
-			if (rs.next()) {
-				user = extractUser(rs);
-			}
-			con.commit();
-		} catch (SQLException ex) {
-			rollback(con);
-		} finally {
-			close(con, pstmt, rs);
-		}
-		return user;
-	}
+	
 	
 //	public String getUserLogin() {
 //		
@@ -82,22 +61,13 @@ public class DBManager {
 //		
 //	}
 	
-	private User extractUser(ResultSet rs) throws SQLException {
-		User user = new User();
-		user.setId(rs.getLong("user_id"));
-		user.setLogin(rs.getString("login"));
-		user.setPassword(rs.getString("password"));
-		user.setName(rs.getString("name"));
-		user.setLastName(rs.getString("last_name"));
-		user.setRole(rs.getString("role"));
-		return user;
-	}
+	
 	
 	// //////////////////////////////////////////////////////////
 	// DB util methods
 	// //////////////////////////////////////////////////////////
 
-	private void rollback(Connection con) {
+	public void rollback(Connection con) {
 		if (con != null) {
 			try {
 				con.rollback();
@@ -113,7 +83,7 @@ public class DBManager {
 	 * @param con
 	 *            Connection to be closed.
 	 */
-	private void close(Connection con) {
+	public void close(Connection con) {
 		if (con != null) {
 			try {
 				con.close();
@@ -126,7 +96,7 @@ public class DBManager {
 	/**
 	 * Closes a statement object.
 	 */
-	private void close(Statement stmt) {
+	public void close(Statement stmt) {
 		if (stmt != null) {
 			try {
 				stmt.close();
@@ -139,7 +109,7 @@ public class DBManager {
 	/**
 	 * Closes a result set object.
 	 */
-	private void close(ResultSet rs) {
+	public void close(ResultSet rs) {
 		if (rs != null) {
 			try {
 				rs.close();
@@ -152,7 +122,7 @@ public class DBManager {
 	/**
 	 * Closes resources.
 	 */
-	private void close(Connection con, Statement stmt, ResultSet rs) {
+	public void close(Connection con, Statement stmt, ResultSet rs) {
 		close(rs);
 		close(stmt);
 		close(con);
@@ -186,12 +156,6 @@ public class DBManager {
 		} catch (SQLException ex) {
 			LOGGER.error("SQLException");
 		}
-	}
-	
-	public static void main(String[] args) {
-		DBManager dbManager = new DBManager();
-		System.out.println(dbManager.getManagerLogin());
-		System.out.println(dbManager.getManagerPassword());
 	}
 	
 }

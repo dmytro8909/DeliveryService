@@ -3,6 +3,7 @@ package commands;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import dao.UserDAO;
 import db.DBManager;
 import entities.User;
 import logic.LoginLogic;
@@ -10,9 +11,10 @@ import resource.ConfigurationManager;
 import resource.MessageManager;
 
 public class LoginCommand implements ActionCommand {
+	
 	private static final String PARAM_NAME_LOGIN = "login";
 	private static final String PARAM_NAME_PASSWORD = "password";
-	private DBManager dbManager = new DBManager();
+	private UserDAO userDAO = new UserDAO();
 	
 	@Override
 	public String execute(HttpServletRequest request) throws Exception {
@@ -21,17 +23,20 @@ public class LoginCommand implements ActionCommand {
 		String login = request.getParameter(PARAM_NAME_LOGIN);
 		String pass = request.getParameter(PARAM_NAME_PASSWORD);
 	
-		User user = dbManager.findUserByLogin(login);
+		User user = userDAO.findUserByLogin(login);
+		String userRole = user.getRole();
 		
 		if (user == null || !pass.equals(user.getPassword())) {
 			throw new Exception("Cannot find user with such login/password");
 		}
 		
 		if (LoginLogic.checkLogin(login, pass) && "manager".equals(user.getRole())) {
-			session.setAttribute("user", login);
+			session.setAttribute("user", user);
+			session.setAttribute("userRole", userRole);
 			page = ConfigurationManager.getProperty("path.page.manager");
-		} else if (LoginLogic.checkLogin(login, pass)) { 
-			session.setAttribute("user", login);
+		} else if (LoginLogic.checkLogin(login, pass) && "user".equals(user.getRole())) { 
+			session.setAttribute("user", user);
+			session.setAttribute("userRole", userRole);
 			page = ConfigurationManager.getProperty("path.page.client");
 		} else {
 			session.setAttribute("errorLoginPassMessage",

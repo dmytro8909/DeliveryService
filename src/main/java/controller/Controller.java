@@ -87,6 +87,11 @@ public class Controller extends HttpServlet {
 //					throws ServletException, IOException{
 //		
 //		String page = null;
+//		
+//
+//		DirectionDAO dirDAO = new DirectionDAO();
+//		request.setAttribute("directionList",dirDAO.getAll());
+//		
 //		ActionFactory client = new ActionFactory();
 //		ActionCommand command = client.defineCommand(request);
 //		try {
@@ -99,7 +104,7 @@ public class Controller extends HttpServlet {
 ////			RequestDispatcher dispatcher = 
 ////					getServletContext().getRequestDispatcher(page);
 ////			dispatcher.forward(request, response);
-//			response.sendRedirect("controller");
+//			response.sendRedirect(request.getContextPath() + page);
 //		} else {
 //			page = ConfigurationManager.getProperty("path.page.index");
 //			request.getSession().setAttribute("nullPage",

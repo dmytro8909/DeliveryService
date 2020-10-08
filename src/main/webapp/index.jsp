@@ -4,7 +4,9 @@
 	<%@ include file="/views/jspf/head.jspf" %>
 	<body class="text-center">
 		<%@ include file="/views/jspf/header.jspf"%>
-		<%@ include file="/views/jspf/main.jspf"%>
+		<c:if test="${empty user}">
+			<c:import url="/views/jspf/main.jspf"/>
+		</c:if>
 		<%@ include file="/views/jspf/footer.jspf"%>
 	</body>
 </html>

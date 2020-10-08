@@ -34,8 +34,7 @@ public class DirectionDAO implements AbstractDAO<Direction> {
 					directions.add(direction);
 				}
 			} catch (SQLException ex) {
-//				LOGGER.error("SQLException");
-				ex.printStackTrace();
+				LOGGER.error("SQLException");
 			}
 			return directions;
 	}

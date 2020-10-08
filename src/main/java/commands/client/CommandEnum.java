@@ -6,10 +6,16 @@ import commands.LoginCommand;
 import commands.LogoutCommand;
 import commands.NotRegisterCommand;
 import commands.RegisterCommand;
+import commands.ToIndexCommand;
 import commands.ToLoginFormCommand;
 import commands.ToRegisterFormCommand;
 
 public enum CommandEnum {
+	TOINDEX {
+			{
+				this.command = new ToIndexCommand();
+			}
+	},
 	LOGIN {
 			{
 				this.command = new LoginCommand();

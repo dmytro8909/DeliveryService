@@ -12,6 +12,7 @@
 /home/dmytro/workspace/DeliveryService/src/main/java/dao/UserDAO.java
 /home/dmytro/workspace/DeliveryService/src/main/java/exception/Messages.java
 /home/dmytro/workspace/DeliveryService/src/main/java/dao/DirectionDAO.java
+/home/dmytro/workspace/DeliveryService/src/main/java/commands/ToIndexCommand.java
 /home/dmytro/workspace/DeliveryService/src/main/java/commands/RegisterCommand.java
 /home/dmytro/workspace/DeliveryService/src/main/java/entities/Rate.java
 /home/dmytro/workspace/DeliveryService/src/main/java/commands/LoginCommand.java
