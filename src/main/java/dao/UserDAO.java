@@ -67,21 +67,20 @@ public class UserDAO implements AbstractDAO<User> {
 		User user = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		Connection con = null;
+		Connection connection = null;
 		try {
-			con = pool.getConnection();
-			pstmt = con.prepareStatement(SQLConstants.SQL_FIND_USER_BY_LOGIN);
+			connection = pool.getConnection();
+			pstmt = connection.prepareStatement(SQLConstants.SQL_FIND_USER_BY_LOGIN);
 			pstmt.setString(1, login);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				user = extractUser(rs);
 			}
-			con.commit();
 		} catch (SQLException ex) {
 			LOGGER.error("SQLException");
-			dbManager.rollback(con);
+			dbManager.rollback(connection);
 		} finally {
-			dbManager.close(con, pstmt, rs);
+			dbManager.close(connection, pstmt, rs);
 		}
 		return user;
 	}

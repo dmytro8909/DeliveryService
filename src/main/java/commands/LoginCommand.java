@@ -3,6 +3,10 @@ package commands;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import controller.Controller;
 import dao.UserDAO;
 import db.DBManager;
 import entities.User;
@@ -27,22 +31,23 @@ public class LoginCommand implements ActionCommand {
 		String userRole = user.getRole();
 		
 		if (user == null || !pass.equals(user.getPassword())) {
-			throw new Exception("Cannot find user with such login/password");
+			session.setAttribute("loginerror",
+			MessageManager.getProperty("message.loginerror"));
+			page = ConfigurationManager.getProperty("path.page.login");
 		}
 		
 		if (LoginLogic.checkLogin(login, pass) && "manager".equals(user.getRole())) {
 			session.setAttribute("user", user);
 			session.setAttribute("userRole", userRole);
 			page = ConfigurationManager.getProperty("path.page.manager");
-		} else if (LoginLogic.checkLogin(login, pass) && "user".equals(user.getRole())) { 
+		}
+		
+		if (LoginLogic.checkLogin(login, pass) && "user".equals(user.getRole())) { 
 			session.setAttribute("user", user);
 			session.setAttribute("userRole", userRole);
 			page = ConfigurationManager.getProperty("path.page.client");
-		} else {
-			session.setAttribute("errorLoginPassMessage",
-			MessageManager.getProperty("message.loginerror"));
-			page = ConfigurationManager.getProperty("path.page.login");
 		}
+		
 		return page;
 	}
 }

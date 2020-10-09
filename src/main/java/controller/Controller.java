@@ -66,6 +66,8 @@ public class Controller extends HttpServlet {
 		if (page != null) {
 			RequestDispatcher dispatcher = 
 					getServletContext().getRequestDispatcher(page);
+			request.setCharacterEncoding("UTF-8");
+			response.setCharacterEncoding("UTF-8");
 			dispatcher.forward(request, response);
 		} else {
 			page = ConfigurationManager.getProperty("path.page.error");
@@ -89,8 +91,7 @@ public class Controller extends HttpServlet {
 //		}
 //		
 //		if (command != null) {
-//			response.sendRedirect(request.getContextPath() + 
-//	                              "/controller?command=" + command);
+//			response.sendRedirect(request.getContextPath() + page);
 //		} else {
 //			page = ConfigurationManager.getProperty("path.page.error");
 //			request.getSession().setAttribute("nullPage",
