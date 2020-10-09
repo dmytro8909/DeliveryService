@@ -55,13 +55,6 @@ public class Controller extends HttpServlet {
 										throws ServletException, IOException{
 		
 		String page = null;
-		
-		
-		
-		DirectionDAO dirDAO = new DirectionDAO();
-		request.setAttribute("directionList",dirDAO.getAll());
-		
-		
 		ActionFactory client = new ActionFactory();
 		ActionCommand command = client.defineCommand(request);
 		try {
@@ -75,7 +68,7 @@ public class Controller extends HttpServlet {
 					getServletContext().getRequestDispatcher(page);
 			dispatcher.forward(request, response);
 		} else {
-			page = ConfigurationManager.getProperty("path.page.index");
+			page = ConfigurationManager.getProperty("path.page.error");
 			request.getSession().setAttribute("nullPage",
 			MessageManager.getProperty("message.nullpage"));
 			response.sendRedirect(request.getContextPath() + page);
@@ -87,11 +80,6 @@ public class Controller extends HttpServlet {
 //					throws ServletException, IOException{
 //		
 //		String page = null;
-//		
-//
-//		DirectionDAO dirDAO = new DirectionDAO();
-//		request.setAttribute("directionList",dirDAO.getAll());
-//		
 //		ActionFactory client = new ActionFactory();
 //		ActionCommand command = client.defineCommand(request);
 //		try {
@@ -100,13 +88,11 @@ public class Controller extends HttpServlet {
 //			LOGGER.error("Page exception");
 //		}
 //		
-//		if (page != null) {
-////			RequestDispatcher dispatcher = 
-////					getServletContext().getRequestDispatcher(page);
-////			dispatcher.forward(request, response);
-//			response.sendRedirect(request.getContextPath() + page);
+//		if (command != null) {
+//			response.sendRedirect(request.getContextPath() + 
+//	                              "/controller?command=" + command);
 //		} else {
-//			page = ConfigurationManager.getProperty("path.page.index");
+//			page = ConfigurationManager.getProperty("path.page.error");
 //			request.getSession().setAttribute("nullPage",
 //					MessageManager.getProperty("message.nullpage"));
 //			response.sendRedirect(request.getContextPath() + page);

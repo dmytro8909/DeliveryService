@@ -10,15 +10,28 @@
 				<div class="col"></div>
 				<div class="col"></div>
 				<div class="col">
-					<form name="loginForm" method="POST" action="controller">
+					<form class="needs-validation" novalidate 
+					      name="loginForm" method="POST" action="controller">
 						<input type="hidden" name="command" value="login" />
 						<div class="form-group">
-    						<input type="text" name="login" 
-    							   class="form-control" placeholder="Login">
+    						<input type="text" name="login" id="validationLogin" 
+    							   class="form-control" placeholder="Login" required>
+    					    <div class="valid-feedback">
+        						Looks good!
+      						</div>
+      						<div class="invalid-feedback">
+        						Please enter a login.
+      						</div>
 						</div>
 						<div class="form-group">
-						    <input type="password" name="password" 
-						           class="form-control" placeholder="Password">
+						    <input type="password" name="password" id="validationPassword"
+						           class="form-control" placeholder="Password" required>
+						    <div class="valid-feedback">
+        						Looks good!
+      						</div>
+      						<div class="invalid-feedback">
+        						Please enter a password.
+      						</div>
 						</div>
 						<br/>
 							${errorLoginPassMessage}
@@ -29,6 +42,25 @@
 						            class="btn btn-lg btn-success btn-block">
 						            Log in</button>
 					</form>
+					<script>
+					(function() {
+					  'use strict';
+					  window.addEventListener('load', function() {
+					    var forms = 
+						    document.getElementsByClassName('needs-validation');
+					    var validation = 
+						    Array.prototype.filter.call(forms, function(form) {
+					      form.addEventListener('submit', function(event) {
+					        if (form.checkValidity() === false) {
+					          event.preventDefault();
+					          event.stopPropagation();
+					        }
+					        form.classList.add('was-validated');
+					      }, false);
+					    });
+					  }, false);
+					})();
+					</script>
 				</div>
 				<div class="col"></div>
 				<div class="col"></div>

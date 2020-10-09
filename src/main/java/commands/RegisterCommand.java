@@ -41,7 +41,7 @@ public class RegisterCommand implements ActionCommand {
 			}
 		} else {
 			request.setAttribute("errorLoginPassMessage",
-			MessageManager.getProperty("message.loginerror"));
+			MessageManager.getProperty("message.loginexists"));
 			page = ConfigurationManager.getProperty("path.page.register");
 		}
 		return page;

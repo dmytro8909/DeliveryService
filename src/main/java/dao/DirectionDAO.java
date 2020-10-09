@@ -18,6 +18,8 @@ public class DirectionDAO implements AbstractDAO<Direction> {
 
 	private static final Logger LOGGER = LogManager.getLogger(DirectionDAO.class);
 	
+	public DirectionDAO() {}
+	
 	@Override
 	public List<Direction> getAll() {
 		List<Direction> directions = new ArrayList<>();
